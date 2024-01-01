@@ -1,0 +1,37 @@
+version: '3'
+services:
+  registry-docker:
+    image: registry:2
+    ports:
+      - "5000:5000"
+    environment:
+      REGISTRY_PROXY_REMOTEURL: https://registry-1.docker.io
+    restart: always
+  registry-quay:
+    image: registry:2
+    ports:
+      - "5001:5000"
+    environment:
+      REGISTRY_PROXY_REMOTEURL: https://quay.io
+    restart: always
+  registry-ghcr:
+    image: registry:2
+    ports:
+      - "5002:5000"
+    environment:
+      REGISTRY_PROXY_REMOTEURL: https://ghcr.io
+    restart: always
+  registry-gcr:
+    image: registry:2
+    ports:
+      - "5003:5000"
+    environment:
+      REGISTRY_PROXY_REMOTEURL: https://gcr.io
+    restart: always
+  registry-aws:
+    image: registry:2
+    ports:
+      - "5004:5000"
+    environment:
+      REGISTRY_PROXY_REMOTEURL: https://public.ecr.aws
+    restart: always

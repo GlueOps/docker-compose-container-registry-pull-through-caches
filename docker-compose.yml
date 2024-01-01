@@ -2,6 +2,8 @@ version: '3'
 services:
   registry-docker:
     image: registry:2
+    volumes:
+      - ./data:/var/lib/registry
     ports:
       - "5000:5000"
     environment:
@@ -9,6 +11,8 @@ services:
     restart: always
   registry-quay:
     image: registry:2
+    volumes:
+      - ./data:/var/lib/registry
     ports:
       - "5001:5000"
     environment:
@@ -16,6 +20,8 @@ services:
     restart: always
   registry-ghcr:
     image: registry:2
+    volumes:
+      - ./data:/var/lib/registry
     ports:
       - "5002:5000"
     environment:
@@ -23,6 +29,8 @@ services:
     restart: always
   registry-gcr:
     image: registry:2
+    volumes:
+      - ./data:/var/lib/registry
     ports:
       - "5003:5000"
     environment:
@@ -30,8 +38,33 @@ services:
     restart: always
   registry-aws:
     image: registry:2
+    volumes:
+      - ./data:/var/lib/registry
     ports:
       - "5004:5000"
     environment:
       REGISTRY_PROXY_REMOTEURL: https://public.ecr.aws
     restart: always
+  registry-mcr:
+    image: registry:2
+    volumes:
+      - ./data:/var/lib/registry
+    ports:
+      - "5005:5000"
+    environment:
+      REGISTRY_PROXY_REMOTEURL: https://mcr.microsoft.com
+    restart: always
+  registry-gitlab:
+    image: registry:2
+    volumes:
+      - ./data:/var/lib/registry
+    ports:
+      - "5006:5000"
+    environment:
+      REGISTRY_PROXY_REMOTEURL: https://registry.gitlab.com
+    restart: always
+
+
+#https://distribution.github.io/distribution/recipes/mirror/
+#https://distribution.github.io/distribution/recipes/mirror/#configure-the-cache
+#https://distribution.github.io/distribution/about/deploying/#customize-the-storage-location

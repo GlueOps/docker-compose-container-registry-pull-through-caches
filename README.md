@@ -12,6 +12,4 @@ bash <(curl -sL setup.glueops.dev)
 
 ```bash
 docker-compose up -d
-#depending on how docker was installed you may need to use:
-docker compose up -d
 ```

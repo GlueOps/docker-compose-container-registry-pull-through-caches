@@ -1,7 +1,7 @@
 version: '3'
 services:
   registry-docker:
-    image: registry:2@sha256:fb9c9aef62af3955f6014613456551c92e88a67dcf1fc51f5f91bcbd1832813f
+    image: registry:2@sha256:4fac7a8257b1d7a86599043fcc181dfbdf9c8f57e337db763ac94b0e67c6cfb5
     volumes:
       - ./data:/var/lib/registry
     ports:
@@ -10,7 +10,7 @@ services:
       REGISTRY_PROXY_REMOTEURL: https://registry-1.docker.io
     restart: always
   registry-quay:
-    image: registry:2@sha256:fb9c9aef62af3955f6014613456551c92e88a67dcf1fc51f5f91bcbd1832813f
+    image: registry:2@sha256:4fac7a8257b1d7a86599043fcc181dfbdf9c8f57e337db763ac94b0e67c6cfb5
     volumes:
       - ./data:/var/lib/registry
     ports:
@@ -19,7 +19,7 @@ services:
       REGISTRY_PROXY_REMOTEURL: https://quay.io
     restart: always
   registry-ghcr:
-    image: registry:2@sha256:fb9c9aef62af3955f6014613456551c92e88a67dcf1fc51f5f91bcbd1832813f
+    image: registry:2@sha256:4fac7a8257b1d7a86599043fcc181dfbdf9c8f57e337db763ac94b0e67c6cfb5
     volumes:
       - ./data:/var/lib/registry
     ports:
@@ -28,7 +28,7 @@ services:
       REGISTRY_PROXY_REMOTEURL: https://ghcr.io
     restart: always
   registry-gcr:
-    image: registry:2@sha256:fb9c9aef62af3955f6014613456551c92e88a67dcf1fc51f5f91bcbd1832813f
+    image: registry:2@sha256:4fac7a8257b1d7a86599043fcc181dfbdf9c8f57e337db763ac94b0e67c6cfb5
     volumes:
       - ./data:/var/lib/registry
     ports:
@@ -37,7 +37,7 @@ services:
       REGISTRY_PROXY_REMOTEURL: https://gcr.io
     restart: always
   registry-aws:
-    image: registry:2@sha256:fb9c9aef62af3955f6014613456551c92e88a67dcf1fc51f5f91bcbd1832813f
+    image: registry:2@sha256:4fac7a8257b1d7a86599043fcc181dfbdf9c8f57e337db763ac94b0e67c6cfb5
     volumes:
       - ./data:/var/lib/registry
     ports:
@@ -46,7 +46,7 @@ services:
       REGISTRY_PROXY_REMOTEURL: https://public.ecr.aws
     restart: always
   registry-mcr:
-    image: registry:2@sha256:fb9c9aef62af3955f6014613456551c92e88a67dcf1fc51f5f91bcbd1832813f
+    image: registry:2@sha256:4fac7a8257b1d7a86599043fcc181dfbdf9c8f57e337db763ac94b0e67c6cfb5
     volumes:
       - ./data:/var/lib/registry
     ports:
@@ -55,7 +55,7 @@ services:
       REGISTRY_PROXY_REMOTEURL: https://mcr.microsoft.com
     restart: always
   registry-gitlab:
-    image: registry:2@sha256:fb9c9aef62af3955f6014613456551c92e88a67dcf1fc51f5f91bcbd1832813f
+    image: registry:2@sha256:4fac7a8257b1d7a86599043fcc181dfbdf9c8f57e337db763ac94b0e67c6cfb5
     volumes:
       - ./data:/var/lib/registry
     ports:

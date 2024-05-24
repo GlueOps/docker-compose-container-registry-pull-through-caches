@@ -3,10 +3,12 @@
 
 # Requirements
 
-Docker just install it on debain using:
+Install the basics:
 ```bash
-bash <(curl -sL setup.glueops.dev)
+curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh && sudo apt-get update && sudo apt install tmux jq figlet -y && sudo apt-get clean
 ```
+
+
 
 # To deploy
 

@@ -5,7 +5,7 @@
 
 Install the basics:
 ```bash
-curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh && sudo apt-get update && sudo apt install tmux jq figlet -y && sudo apt-get clean
+curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh && sudo apt-get update && sudo apt install tmux git -y && sudo apt-get clean
 ```
 
 
@@ -13,5 +13,7 @@ curl -fsSL https://get.docker.com -o get-docker.sh && sudo sh get-docker.sh && s
 # To deploy
 
 ```bash
-docker-compose up -d
+git https://github.com/GlueOps/docker-compose-container-registry-pull-through-caches.git
+cd docker-compose-container-registry-pull-through-cache/
+docker compose up -d
 ```

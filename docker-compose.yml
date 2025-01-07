@@ -64,7 +64,7 @@ services:
       REGISTRY_PROXY_REMOTEURL: https://registry.gitlab.com
     restart: always
   registry-k8s:
-    image: registry:2@sha256:ac0192b549007e22998eb74e8d8488dcfe70f1489520c3b144a6047ac5efbe90
+    image: registry:2@sha256:26f7266535a3a1dae81e137ba4935c59d96e7bb4b700f64e4af8959ca5ab0419
     volumes:
       - ./data:/var/lib/registry
     ports:

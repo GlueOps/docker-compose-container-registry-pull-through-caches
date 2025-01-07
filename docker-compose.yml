@@ -63,6 +63,15 @@ services:
     environment:
       REGISTRY_PROXY_REMOTEURL: https://registry.gitlab.com
     restart: always
+  registry-k8s:
+    image: registry:2@sha256:ac0192b549007e22998eb74e8d8488dcfe70f1489520c3b144a6047ac5efbe90
+    volumes:
+      - ./data:/var/lib/registry
+    ports:
+      - "5007:5000"
+    environment:
+      REGISTRY_PROXY_REMOTEURL: https://registry.k8s.io
+    restart: always
 
 
 #https://distribution.github.io/distribution/recipes/mirror/

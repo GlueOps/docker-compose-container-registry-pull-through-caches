@@ -1,6 +1,23 @@
 # docker-compose-container-registry-pull-through-caches
 
-# To deploy in hetzner, just use this cloud-init config. Don't forget to update the hostname and the authkey for tailscale
+# Deployment
+
+To deploy in hetzner, go to Hetzner cloud console and look for the project called "container-registry-cache".
+
+Create a new instance in hetzner cloud:
+- 3 or more vCPU's (e.g. CPX21 or CPX32)
+- Keep a public IPv4
+- Remove IPv6 address
+- Attach the firewall rule that blocks all incoming connections
+- Use cloud-init config below but update the --authKey for tailscale.
+
+
+You can create an authKey in tailscale as follows:
+
+<img width="745" height="1164" alt="image" src="https://github.com/user-attachments/assets/bfced0e9-e3e0-4f89-87ca-21b0497ad988" />
+
+
+# cloud-init/config:
 
 ```yaml
 #cloud-config
@@ -31,3 +48,6 @@ runcmd:
   - 'cd /opt && git clone https://github.com/GlueOps/docker-compose-container-registry-pull-through-caches.git'
   - 'cd /opt/docker-compose-container-registry-pull-through-caches && docker compose up -d'
 ```
+
+
+Once you have an instance running, update the `dev-only-registry` DNS entry to use the new tailscale IP of the node you just added and assuming everything is working destroy the old hetzner node and remove it from tailscale

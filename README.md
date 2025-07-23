@@ -38,7 +38,7 @@ runcmd:
 
   # Configure and connect to Tailscale in a single step
   # :exclamation:️ Replace "tskey-auth-..." with your actual Tailscale auth key.
-  - ['tailscale', 'up', '--authkey=XXXXXXXXXXXXXXXXXXXXXXXX', '--ssh']
+  - ['tailscale', 'up', '--authkey=YOUR_TAILSCALE_AUTH_KEY_HERE', '--ssh']
 
   # Secure the root account by disabling password login
   - ['passwd', '-d', 'root']

@@ -72,6 +72,15 @@ services:
     environment:
       REGISTRY_PROXY_REMOTEURL: https://registry.k8s.io
     restart: always
+  public-mirror-gpkg-io:
+    image: registry:3@sha256:3725021071ec9383eb3d87ddbdff9ed602439b3f7c958c9c2fb941049ea6531d
+    volumes:
+      - ./data:/var/lib/registry
+    ports:
+      - "5008:5000"
+    environment:
+      REGISTRY_PROXY_REMOTEURL: https://public-mirror.gpkg.io
+    restart: always
 
 
 #https://distribution.github.io/distribution/recipes/mirror/

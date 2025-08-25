@@ -2,8 +2,6 @@ version: '3'
 services:
   registry-docker:
     image: registry:3@sha256:3725021071ec9383eb3d87ddbdff9ed602439b3f7c958c9c2fb941049ea6531d
-    volumes:
-      - ./data:/var/lib/registry
     ports:
       - "5000:5000"
     environment:
@@ -11,8 +9,6 @@ services:
     restart: always
   registry-quay:
     image: registry:3@sha256:3725021071ec9383eb3d87ddbdff9ed602439b3f7c958c9c2fb941049ea6531d
-    volumes:
-      - ./data:/var/lib/registry
     ports:
       - "5001:5000"
     environment:
@@ -20,8 +16,6 @@ services:
     restart: always
   registry-ghcr:
     image: registry:3@sha256:3725021071ec9383eb3d87ddbdff9ed602439b3f7c958c9c2fb941049ea6531d
-    volumes:
-      - ./data:/var/lib/registry
     ports:
       - "5002:5000"
     environment:
@@ -29,8 +23,6 @@ services:
     restart: always
   registry-gcr:
     image: registry:3@sha256:3725021071ec9383eb3d87ddbdff9ed602439b3f7c958c9c2fb941049ea6531d
-    volumes:
-      - ./data:/var/lib/registry
     ports:
       - "5003:5000"
     environment:
@@ -38,8 +30,6 @@ services:
     restart: always
   registry-aws:
     image: registry:3@sha256:3725021071ec9383eb3d87ddbdff9ed602439b3f7c958c9c2fb941049ea6531d
-    volumes:
-      - ./data:/var/lib/registry
     ports:
       - "5004:5000"
     environment:
@@ -47,8 +37,6 @@ services:
     restart: always
   registry-mcr:
     image: registry:3@sha256:3725021071ec9383eb3d87ddbdff9ed602439b3f7c958c9c2fb941049ea6531d
-    volumes:
-      - ./data:/var/lib/registry
     ports:
       - "5005:5000"
     environment:
@@ -56,8 +44,6 @@ services:
     restart: always
   registry-gitlab:
     image: registry:3@sha256:3725021071ec9383eb3d87ddbdff9ed602439b3f7c958c9c2fb941049ea6531d
-    volumes:
-      - ./data:/var/lib/registry
     ports:
       - "5006:5000"
     environment:
@@ -65,8 +51,6 @@ services:
     restart: always
   registry-k8s:
     image: registry:3@sha256:3725021071ec9383eb3d87ddbdff9ed602439b3f7c958c9c2fb941049ea6531d
-    volumes:
-      - ./data:/var/lib/registry
     ports:
       - "5007:5000"
     environment:
@@ -74,8 +58,6 @@ services:
     restart: always
   public-mirror-gpkg-io:
     image: registry:3@sha256:3725021071ec9383eb3d87ddbdff9ed602439b3f7c958c9c2fb941049ea6531d
-    volumes:
-      - ./data:/var/lib/registry
     ports:
       - "5008:5000"
     environment:
